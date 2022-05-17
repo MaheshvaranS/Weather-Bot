@@ -1,6 +1,16 @@
 version: '3.4'
 services:
-
+  rasa-flask:
+    image: rasa-chatbot:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rasa-chat-app
+    volumes: 
+      - .:/rasa_app
+    ports:
+      - 5000:5000
+    command: python3 app.py
   rasa-server:
     image: rasa-bot:latest
     working_dir: /app
@@ -11,7 +21,7 @@ services:
     - ./data:/app/data
     command: bash -c "rm -rf models/* && rasa train && rasa run --enable-api --cors \"*\" --debug"
     ports:
-    - '5055:5055'
+    - '5005:5005'
     public: true
     networks:
     - all
