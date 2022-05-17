@@ -1,0 +1,37 @@
+intents:
+- greet
+- goodbye
+- bot_challenge
+- weather
+- city
+- inform
+- inquire
+
+entities:
+- location
+
+slots:
+  location:
+    type: text
+
+actions:
+- utter_greet
+- utter_goodbye
+- utter_iamabot
+- action_weather
+- utter_ask_location
+
+responses:
+  utter_greet:
+  - text: Hey! I am Weather bot i can understand tanglish and english you can ask questions accordingly.
+  utter_goodbye:
+  - text: Bye, See you later
+  utter_iamabot:
+  - text: I am a bot, developed by Data Science student Maheshvaran.
+  utter_ask_location:
+  - text: which city you want to check weather?
+  - text: In what location you want to check weather?
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
