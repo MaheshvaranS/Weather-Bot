@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   rasa-flask:
-    image: rasa-chatbot:latest
+    image: rasa-bot:latest
     build: "./"
     volumes: 
       - :/app
