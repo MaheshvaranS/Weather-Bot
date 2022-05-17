@@ -14,7 +14,7 @@ from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 import requests
 import sys
-sys.path.append("./actions/weather.py")
+sys.path.append("/app/actions/weather.py")
 from weather import Weather
 
 
