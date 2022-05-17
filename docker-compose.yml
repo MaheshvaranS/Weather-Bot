@@ -38,6 +38,8 @@ services:
     restart: always
     volumes: 
       - ./app:/app
+      - ./static:/app/static
+      - ./templates:/app/templates
     command: python3 app.py
     ports:
       - '5000:5000'
