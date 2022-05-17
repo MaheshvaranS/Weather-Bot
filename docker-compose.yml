@@ -37,7 +37,7 @@ services:
     restart: always
     volumes: 
     - ./app:/app/flask
-    command: python app/flask/app.py
+    command: "python app/flask/app.py"
     ports:
     - '5000:5000'
     networks:
