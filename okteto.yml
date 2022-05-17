@@ -6,3 +6,5 @@ sync:
 - .:/app
 forward:
 - 5055:5055
+reverse:
+- 8080:8080
