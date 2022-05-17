@@ -26,7 +26,7 @@ services:
     - ./utils:/app/utils
     command: "rasa run actions"
     ports:
-    - '5055:5055'
+    - '8080:8080'
     networks:
     - all
 
