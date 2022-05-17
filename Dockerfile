@@ -15,6 +15,8 @@ WORKDIR /app
 RUN pip install --no-cache-dir --upgrade pip
 
 RUN pip install rasa==1.10.3
+RUN pip install flask
+RUN pip install gunicorn
 
 ADD config.yml config.yml
 ADD domain.yml domain.yml
