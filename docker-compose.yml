@@ -34,6 +34,7 @@ services:
     image: rasa/rasa:1.10.3
     working_dir: /app
     build: "./"
+    restart: always
     volumes: 
     - ./app:/app
     - ./static:/app/static
