@@ -2,7 +2,7 @@ version: '3.4'
 services:
 
   rasa-server:
-    image: rasa-bot:latest
+    image: rasa/rasa:1.10.3
     working_dir: /app
     build: "./"
     restart: always
@@ -17,30 +17,30 @@ services:
     - all
 
   rasa-actions-server:
-    image: rasa-bot:latest
+    image: rasa/rasa:1.10.3
     working_dir: /app
     build: "./"
     restart: always
     volumes:
     - ./actions:/app/actions
-    command: ["rasa", "run", "actions"]
+    command: "rasa run actions"
     ports:
     - '5055:5055'
     networks:
     - all
 
   rasa-flask:
-    image: rasa-bot:latest
+    image: rasa/rasa:1.10.3
     working_dir: /app
     build: "./"
     restart: always
     volumes: 
-      - ./app:/app
-      - ./static:/app/static
-      - ./templates:/app/templates
+    - ./app:/app
+    - ./static:/app/static
+    - ./templates:/app/templates
     command: python3 app.py
     ports:
-      - '5000:5000'
+    - '5000:5000'
     networks:
     - all
 
