@@ -9,4 +9,4 @@ rasa = "==1.10.3"
 [dev-packages]
 
 [requires]
-python_version = "3.7.13"
+python_version = "3.7"
