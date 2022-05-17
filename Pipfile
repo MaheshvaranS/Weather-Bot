@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-rasa = "==1.10.3"
+rasa = "1.10.3"
 
 [dev-packages]
 
