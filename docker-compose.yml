@@ -4,7 +4,7 @@ services:
     image: rasa-bot:latest
     build: "./"
     volumes: 
-      - :/app
+      - ./app:/app
     ports:
       - 5000:5000
     command: python3 app.py
