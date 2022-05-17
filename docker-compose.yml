@@ -36,8 +36,8 @@ services:
     build: "./"
     restart: always
     volumes: 
-    - ./app:/app
-    command: python app/app.py
+    - ./app:/app/flask
+    command: python app/flask/app.py
     ports:
     - '5000:5000'
     networks:
