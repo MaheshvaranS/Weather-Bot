@@ -5,4 +5,4 @@ volumes:
 sync:
 - .:/app
 forward:
-- 8080:8080
+- 5055:5055
