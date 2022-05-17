@@ -32,11 +32,11 @@ services:
 
   rasa-flask:
     image: rasa/rasa:1.10.3
-    working_dir: /weather
+    working_dir: /app
     build: "./"
     restart: always
     volumes: 
-    - ./app:/app
+    - ./app
     command: "python app.py"
     ports:
     - '5000:5000'
