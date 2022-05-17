@@ -19,12 +19,19 @@ RUN pip install flask
 RUN pip install gunicorn
 RUN pip install requests
 
-ENV FLASK_APP=app.py
-ENV FLASK_RUN_HOST=0.0.0.0
-EXPOSE 5000
-CMD ["flask", "run"]
-
 ADD config.yml config.yml
 ADD domain.yml domain.yml
 ADD credentials.yml credentials.yml
 ADD endpoints.yml endpoints.yml
+
+WORKDIR /weather
+
+RUN pip install rasa==1.10.3
+RUN pip install flask
+RUN pip install gunicorn
+RUN pip install requests
+
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+EXPOSE 5000
+CMD ["flask", "run"]
