@@ -23,7 +23,6 @@ ADD domain.yml domain.yml
 ADD credentials.yml credentials.yml
 ADD endpoints.yml endpoints.yml
 COPY app.py app.py
-ENTRYPOINT ["rasa run actions && rasa run -m models --enable-api --cors "\*"\ --debug"]
 
 
 WORKDIR /flask
@@ -38,6 +37,3 @@ COPY app.py app.py
 COPY static static
 COPY templates templates
 ENTRYPOINT ["python3", "app.py"]
-ENV FLASK_APP = app.py
-ENV FLASK_RUN_HOST = 0.0.0.0
-EXPOSE 5000
