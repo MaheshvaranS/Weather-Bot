@@ -27,4 +27,4 @@ ADD endpoints.yml endpoints.yml
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 EXPOSE 5000
-RUN python -m flask run
+CMD ["python3","app.py"]
