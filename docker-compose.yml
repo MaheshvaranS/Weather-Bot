@@ -13,8 +13,7 @@ services:
     ports:
     - '5005:5005'
     public: true
-    networks:
-    - all
+    
 
   rasa-actions-server:
     image: rasa/rasa:1.10.3
@@ -27,8 +26,7 @@ services:
     command: "rasa run actions"
     ports:
     - '5055:5055'
-    networks:
-    - all
+    public: true
 
   rasa-flask:
     image: rasa/rasa:1.10.3
@@ -44,12 +42,4 @@ services:
     command: "python /flask/app.py"
     ports:
     - '5000:5000'
-    networks:
-    - all
-
-networks:
-  all:
-    driver: bridge
-    driver_opts:
-      com.docker.network.enable_ipv6: "true"
-      com.docker.network.enable_ipv4: "true"
+    public: true
