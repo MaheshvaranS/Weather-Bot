@@ -22,6 +22,9 @@ ADD config.yml config.yml
 ADD domain.yml domain.yml
 ADD credentials.yml credentials.yml
 ADD endpoints.yml endpoints.yml
+COPY app.py app.py
+ENTRYPOINT ["rasa run actions && rasa run -m models --enable-api --cors "\*"\ --debug"]
+
 
 WORKDIR /flask
 
