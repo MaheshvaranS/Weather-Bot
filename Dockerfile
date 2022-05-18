@@ -13,7 +13,6 @@ WORKDIR /app
 
 # upgrade pip version
 RUN pip install --no-cache-dir --upgrade pip
-
 RUN pip install rasa==1.10.3
 RUN pip install flask
 RUN pip install gunicorn
@@ -24,6 +23,18 @@ ADD domain.yml domain.yml
 ADD credentials.yml credentials.yml
 ADD endpoints.yml endpoints.yml
 
+WORKDIR /flask
+
+RUN pip install --no-cache-dir --upgrade pip
+RUN pip install rasa==1.10.3
+RUN pip install flask
+RUN pip install gunicorn
+RUN pip install requests
+
 COPY app.py app.py
 COPY static static
 COPY templates templates
+ENTRYPOINT ["python3", "app.py"]
+ENV FLASK_APP = app.py
+ENV FLASK_RUN_HOST = 0.0.0.0
+EXPOSE 5000
