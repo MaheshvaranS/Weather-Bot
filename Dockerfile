@@ -22,6 +22,11 @@ ADD config.yml config.yml
 ADD domain.yml domain.yml
 ADD credentials.yml credentials.yml
 ADD endpoints.yml endpoints.yml
+COPY app.py app.py
+COPY static static
+COPY templates templates
+
+WORKDIR /app/flask
 
 COPY app.py app.py
 COPY static static
