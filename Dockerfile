@@ -36,4 +36,3 @@ RUN pip install requests
 COPY app.py app.py
 COPY static static
 COPY templates templates
-ENTRYPOINT ["python3", "app.py"]
