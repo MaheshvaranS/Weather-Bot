@@ -1,6 +1,15 @@
 version: '3.4'
 services:
 
+  duckling-server:
+    image: rasa/duckling:latest
+    ports:
+    - '8000:8000'
+    public: true
+    networks:
+    - all
+
+
   rasa-server:
     image: rasa/rasa:1.10.3
     working_dir: /app
@@ -13,6 +22,8 @@ services:
     ports:
     - '5005:5005'
     public: true
+    networks:
+    - all
     
 
   rasa-actions-server:
@@ -27,6 +38,8 @@ services:
     ports:
     - '5055:5055'
     public: true
+    networks:
+    - all
 
   rasa-flask:
     image: rasa/rasa:1.10.3
@@ -43,3 +56,5 @@ services:
     ports:
     - '5000:5000'
     public: true
+    networks:
+    - all
