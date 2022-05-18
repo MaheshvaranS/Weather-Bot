@@ -25,4 +25,3 @@ ADD credentials.yml credentials.yml
 ADD endpoints.yml endpoints.yml
 
 COPY app.py app.py
-ENTRYPOINT ["python3", "app.py"]
