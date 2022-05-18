@@ -24,7 +24,8 @@ ADD domain.yml domain.yml
 ADD credentials.yml credentials.yml
 ADD endpoints.yml endpoints.yml
 
+COPY app.py app.py
+ENTRYPOINT ["python3", "app.py"]
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 EXPOSE 5000
-CMD ["python3","app.py"]
