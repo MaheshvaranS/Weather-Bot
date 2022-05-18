@@ -36,7 +36,7 @@ services:
     build: "./"
     restart: always
     volumes: 
-    - ./app:/flask
+    - ./flask:/flask
     - ./static:/flask/static
     - ./templates:/flask/templates
     - ./actions:/app/actions
