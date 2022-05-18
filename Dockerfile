@@ -24,6 +24,6 @@ ADD domain.yml domain.yml
 ADD credentials.yml credentials.yml
 ADD endpoints.yml endpoints.yml
 
-COPY app.py app.py
-COPY static/ static/
-COPY templates/index.html templates/index.html
+COPY flask/app.py flask/app.py
+COPY flask/static falsk/static
+COPY flask/templates/index.html flask/templates/index.html
