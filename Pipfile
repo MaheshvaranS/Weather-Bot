@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 rasa = "1.10.3"
+rasa_sdk = "1.10.1"
 
 [dev-packages]
 
