@@ -8,7 +8,7 @@ app = Flask(__name__, static_url_path='/app/static')
 # a route to display our html page
 @app.route("/")
 def index():
-    return render_template('/app/static/templates/index.html')
+    return render_template('/app/templates/index.html')
 
 
 # run the application
