@@ -32,14 +32,16 @@ services:
 
   rasa-flask:
     image: rasa/rasa:1.10.3
-    working_dir: /app/flask
+    working_dir: /flask
     build: "./"
     restart: always
     volumes: 
-    - ./app:/app/flask
-    - ./static:/app/flask/static
-    - ./templates:/app/flask/templates
-    command: "python /app/flask/app.py"
+    - ./app:/flask
+    - ./static:/flask/static
+    - ./templates:/flask/templates
+    - ./actions:/app/actions
+    - ./data:/app/data
+    command: "python /flask/app.py"
     ports:
     - '5000:5000'
     networks:
