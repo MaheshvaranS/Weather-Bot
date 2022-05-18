@@ -14,6 +14,7 @@ WORKDIR /app
 # upgrade pip version
 RUN pip install --no-cache-dir --upgrade pip
 RUN pip install rasa==1.10.3
+RUN pip install rasa_sdk==1.10.1
 RUN pip install flask
 RUN pip install gunicorn
 RUN pip install requests
@@ -30,6 +31,7 @@ WORKDIR /flask
 
 RUN pip install --no-cache-dir --upgrade pip
 RUN pip install rasa==1.10.3
+RUN pip install rasa_sdk==1.10.1
 RUN pip install flask
 RUN pip install gunicorn
 RUN pip install requests
