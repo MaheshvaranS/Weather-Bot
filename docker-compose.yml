@@ -27,7 +27,7 @@ services:
     
 
   rasa-actions-server:
-    image: rasa/rasa:1.10.3
+    image: rasa/rasa_sdk:1.10.1
     working_dir: /app
     build: "./"
     restart: always
